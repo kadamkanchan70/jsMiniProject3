@@ -4,8 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .theme-icon{
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+            background-color: white;
+            border-radius: 5px;
+            border: 4px solid black;
+            display: inline-block;
+           margin: 10px auto;
+           padding: 5px;
+        }
+        .active{
+            border-radius: 10px;
+            border: 4px solid black;
+            background-color: white;
+        }
+        .theme-dark{
+            background-color: black;
+            color: white;
+        }
+        .theme-light{
+            background-color: #f4a261;
+            color: #000;
+        }
+    </style>
 </head>
-<body>
-    
+<body id="body">
+    <div>
+        <img src="./img/dark-mode (2).png" class="theme-icon " id="img-dark" onclick="darkMode()"/>
+        <img src="./img/themes.png" class="theme-icon " id="img-light" onclick="lightMode()"/>
+       
+            <h1>Dark and Light Mode</h1>
+       
+        </div>
+        <script>
+            function darkMode(){
+                const theme_dark = document.getElementById("img-dark");
+                theme_dark.classList.add('active');
+
+                const theme_light = document.getElementById("img-light");
+                theme_light.classList.remove('active');
+
+                const Element = document.getElementById("body");
+                Element.className = "theme-dark";
+            }
+            function lightMode(){
+                const theme_light = document.getElementById("img-light");
+                theme_light.classList.add('active');
+
+                const theme_dark  = document.getElementById("img-dark");
+                theme_dark.classList.remove('active');   
+
+                const Element = document.getElementById("body");
+                Element.className = "theme-light";
+            }
+        </script>
 </body>
 </html>
